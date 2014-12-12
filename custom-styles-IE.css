@@ -1,0 +1,8 @@
+/* IE Custom Stylesheet */
+
+
+#footer .fb { width: 100% !important;  margin-bottom: 10px!important; }
+#footer .social:hover { padding: 5px 10px !important; margin-right: 20px; margin-bottom: 20px; }
+.logo img { max-height: 45px !important; }
+
+#footer textarea { top: -159px; }

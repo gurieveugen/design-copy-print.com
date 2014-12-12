@@ -1,0 +1,221 @@
+/* General Styles */
+
+/*
+-
+*********************************************************************************
+*************************** MEDIA QUERIES - ref10 ***************************************
+*********************************************************************************
+-
+*/
+@media only screen and (min-width: 989px) and (max-width: 1140px) {
+  
+    #layerslider_3 { height: 460px!important; max-width: 910px; }
+    .page-id-1176 .inner-entry img { max-height: 143px; }
+    .Opentimes { font-size: 12px; margin-right: 10px; }
+    #footer .social:hover {  padding: 5px 20px!important; }
+    #footer #wpcf7-f208-w1-o1 { width: 430px; }
+    #footer textarea { width: 200px; }
+    #footer .submit-wrap { left: 81px; top: -13px; }
+}
+
+@media only screen and (max-width: 989px) and (min-width: 768px) {
+  
+    #portfoliobox-2 { display: none; }
+    #text-6 { left: -230px; }
+    #layerslider_3 { height: 400px!important; max-width: 681px; }
+  .slider-p1 { font-size: 14px!important; }
+  #layer_slider_1 .avia-button-left { top: 15px; position: relative; }
+  .Opentimes { font-size: 12px; margin-right: 10px; width: 100%; float: left; text-align: left!important; }
+  div .av_one_fourth { width: 29.3%; }
+  #av_section_1 .avia-builder-el-8 { margin-left: 0; width: 100%;  height: 90px; margin-top: 30px;  }
+  #av_section_1 .avia-builder-el-6 { height: 212px; }
+  #CartridgeW-Home { width: 100%; height: 90px; }
+  #CartridgeW-Img { float: left; margin-right: 20px; }
+  .Home-Img { width: 100%; }
+    #footer #wpcf7-f208-w1-o1 { width: 430px; }
+    #footer textarea { width: 200px; }
+  #footer .submit-wrap { left: 81px; top: -13px; }
+  #main .header-banner { background: url(/wp-content/uploads/2013/06/Portfolio-bg1.png) no-repeat, url(/wp-content/uploads/2013/06/squairy_light.png) top left repeat !important;
+  background-position: 340px !important; }
+  #main .header-banner-inside { background: none !important; }
+    
+  /**** Home Slider Styles ****/
+  
+    #layerslider_3 #slide2 img { top: 45px !important; left: 4% !important; width: 48% !important; }
+  
+  #top .ls-nav-next { right: -10%!important; }
+  #top .ls-nav-prev {  left: -10%!important; }
+    .avia-button-wrap {  position: relative; }
+    .avia-button { font-size: 13px!important; }  
+  
+  #layer_slider_1 h2 { font-size: 25px!important; }
+    #layer_slider_1 #slide2 h2 { font-size: 20px!important; width: 35%!important; }
+    #layer_slider_1 #slide3 h2 { width: 30%!important; }
+  
+  #layer_slider_1 #slide1 #slider-p1, #layer_slider_1 #slide2 #slider-p1, #layer_slider_1 #slide3 #slider-p1 {
+    font-size: 13px!important; }
+  
+  #layer_slider_1 #slide1 #slider-p1 { top: 90px!important; width: 35%!important; }
+  #layer_slider_1 #slide2 #slider-p1 { top: 90px!important; }
+    #layer_slider_1 #slide3 #slider-p1 { top: 90px!important; }
+
+  #layerslider_3 #slide1 .avia-button-wrap { top: -25px; }
+  #layerslider_3 #slide2 .avia-button-wrap { top: -5px; }
+  #layerslider_3 #slide3 .avia-button-wrap { top: -25px; }  
+  
+  #layerslider_3 #slide1 img { top: 30px!important; }
+
+}
+
+/****************** iPhone Queries (Portrait) - ref11 ***********************/
+
+@media only screen and (max-width: 767px) {
+  
+  .Home-Img { width: 100%; height: 240px; }
+  #Home-Services { padding: 42px 0 0; text-align: center; }  
+    #CartridgeW-Home { padding: 35px; }
+  .responsive .main_menu { margin: 20px 0; }
+    .page-id-1454 .inner-entry { height: 240px; }
+  .page-id-1454 .inner-entry img { max-height: 190px; }
+  .page-id-1454 .avia-testimonial-content { padding: 30px!important; }
+  .page-id-1454 .avia-testimonial-content p {  min-height: 100px; max-height: 100px; overflow: hidden; }
+  
+  .responsive #top .flex_column {  margin-bottom: 40px; }
+  .content { padding-bottom: 0; }
+  
+    #footer textarea { float: left; top: 0; }
+  #footer .wpcf7 input { width: 100%; }
+  
+  #footer div.av_one_fourth:last-child { display: none; }
+  #footer div.av_one_fourth, #footer .widget { max-height: 570px; }
+  #footer .submit-wrap { width: 100%; left: 0; }
+  .responsive #footer .flex_column { margin-bottom: 0; }
+  .submit-wrap input { margin-bottom: 10px; }
+  .responsive #header_meta .social_bookmarks li, .responsive #top #header_meta .social_bookmarks li:last-child a {
+    border: 0; margin-top: 10px; }
+    #footer textarea { width: 100%; }
+  #footer #wpcf7-f208-w1-o1, .header-banner-inside { width: 100% !important; }
+  .Opentimes { margin-right: 10px; }
+  #main .header-banner { background: url(/wp-content/uploads/2013/06/Portfolio-bg1.png) no-repeat, url(/wp-content/uploads/2013/06/squairy_light.png) top left repeat !important; }
+  #main .head-p1 { font-size: 1.1em; background: white; padding: 4px 26px; }
+  #main .head-p2 { font-size: 1.2em; background: rgb(231, 231, 231); padding: 7px 20px; margin-top: 72px; }
+  #main .header-banner-inside { background: none !important; }
+  #main .header-banner { background-position-x: 65% !important; }
+    #main .head-p1 { display: none; }
+  #footer { padding: 0px; }
+  
+  .responsive #socket .sub_menu_socket {
+  margin: 0 auto;
+  float: none;
+  margin-left: 0;
+  top: 20px;
+  position: relative;
+  }
+  
+  .responsive #socket .sub_menu_socket {
+  margin: 0 auto;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  top: 40px;
+  position: relative;
+  }
+  
+  #socket .sub_menu_socket div {
+  overflow: show;
+  float: none;
+  display: block;
+  width: 300px;
+    margin: 0 auto; 
+    margin-bottom: 30px;
+  }
+  
+  #socket .copyright {
+  float: none;
+  margin: 0 auto;
+  display: block;
+  width: 180px;
+  }
+  
+  body #layerslider_3 { max-width: 268px; !important; height: 700px !important; }
+  
+  
+  /**** Home Slider Styles ****/                                                                                                                                              -
+                                                                                                                                                                  */
+  .ls-layer, .layerslider_3, #layer_slider_1, #layerslider_1, #layerslider_2, #layerslider_3, #layerslider_4, #layerslider_5, #layerslider_6, .ls-inner {
+    height: 610px!important;
+    max-width: 268px;
+    margin: 0 auto;
+  }
+  
+  #top .ls-nav-prev, #top .ls-nav-next { top: 35%!important; }
+  #top .ls-nav-next { right: -20%!important; width: 40px; }
+  #top .ls-nav-prev { left: -20%!important; width: 40px; }
+  
+  #layer_slider_1 h2 { font-size: 20px!important; left: 0!important; width: 100%!important; }
+  
+    #layerslider_3 #slide1 img { top: 100px!important; left: 2.5%!important; width: 95%!important; }
+    #layerslider_3 #slide2 img { top: 120px!important; left: 7.5%!important; width: 85%!important; }  
+  #layerslider_3 #slide3 img { top: 110px!important; left: 2.5%!important; width: 95%!important; }
+  
+  #layer_slider_1 #slide1 #slider-p1, #layer_slider_1 #slide2 #slider-p1, #layer_slider_1 #slide3 #slider-p1 {
+    font-size: 12px!important; width: 100%!important; left: 0!important; }
+  
+  #layerslider_3 #slide1 #slider-p1 { top: 305px!important; }
+  #layer_slider_1 #slide2 #slider-p1 { top: 327px!important; }
+#layer_slider_1 #slide3 #slider-p1 { top: 330px!important; }
+  
+  .avia-button-wrap { position: relative;  width: 205px; }
+  .avia-button { background: #f7f7f7;  width: 100%; font-size: 13px!important; }
+    #layerslider_3 #slide1 .avia-button-wrap { left: -78.5%!important; top: 165px; }  
+  #layerslider_3 #slide2 .avia-button-wrap { left: -71.5%!important; top: 195px; }
+  #layerslider_3 #slide3 .avia-button-wrap { left: -85%!important; top: 195px; }
+  
+}
+
+
+/********************* iPhone Queries (Landscape) - ref12 ***********************/
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  
+  #av_section_1 .flex_column, #footer .flex_column { width: 46%!important; margin-right: 8%!important; }
+  #av_section_1 .flex_column:nth-child(2n), #footer .flex_column:nth-child(2n) { margin-right: 0!important; }
+    #av_section_1 .flex_column .avia-testimonial-row .avia-testimonial { width: 100%!important; }
+  #Home-Services { padding: 25px 0 0 20px; text-align: left; }
+  #CartridgeW-Img { margin-bottom: 0; }
+    #CartridgeW-Home { padding: 20px; }
+  
+    .page-id-1454 .inner-entry { height: 210px; }
+    .page-id-1454 .inner-entry img { max-height: 160px; }
+  .page-id-1454 .avia-testimonial-content { padding: 20px!important; }
+  .Home-Img {  height: 210px; }
+    #footer .wpcf7 { width: 100px !important; }
+   #footer #wpcf7-f208-w1-o1 { width: 210% !important; }
+  #main .head-p1 { display: inherit; }
+  #main .head-p2 { margin-top: 13px; }
+  
+  
+  
+  /***** Home Slider Styles ****/                                                                                                                                                          
+  body.home #layerslider_3 { max-width: 268px; !important; height: 600px !important; }
+
+  .ls-layer, .layerslider_3, #layer_slider_1, #layerslider_1, #layerslider_2, #layerslider_3, #layerslider_4, #layerslider_5, #layerslider_6, .ls-inner {
+    height: 680px!important; max-width: 428px; margin: 0 auto; }
+  
+  #top .ls-nav-prev, #top .ls-nav-next { top: 37%!important; }
+  
+  #layerslider_3 #slide1 img { top: 95px!important; left: 2.5%!important; width: 95%!important; }
+  #layerslider_3 #slide2 img { top: 115px!important; left: 7.5%!important; width: 85%!important; }
+  #layerslider_3 #slide3 img { top: 115px!important; left: 5%!important; width: 90%!important; }
+  
+  #layerslider_3 #slide1 #slider-p1 { top: 415px!important; }
+  #layer_slider_1 #slide2 #slider-p1 { top: 437px!important; }
+  #layer_slider_1 #slide3 #slider-p1 { top: 460px!important; }
+  
+   #layerslider_3 .avia-button-wrap {  width: 365px; }
+  #layerslider_3 #slide1 .avia-button-wrap { left: -70.5%!important; top: 235px; }
+  #layerslider_3 #slide2 .avia-button-wrap { left: -64%!important; top: 280px; }
+  #layerslider_3 #slide3 .avia-button-wrap { left: -76%!important; top: 280px; }
+  #layerslider_3 { max-width: 428px !important; }
+}
+
