@@ -203,6 +203,7 @@ if(!function_exists('avia_register_frontend_scripts'))
 		wp_enqueue_script( 'avia-shortcodes' );
 		wp_enqueue_script( 'avia-prettyPhoto' );
 		wp_enqueue_script( 'avia-html5-video' );
+		wp_enqueue_script( 'main', $template_url.'/js/main.js', array('jquery') );
 
 		if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 
@@ -369,3 +370,14 @@ add_theme_support( 'avia_post_meta_compat');
  */
 
 require_once( 'functions-enfold.php');
+
+register_sidebar(
+	array(
+		'id'            => 'toolbar-forms',
+		'name'          => 'Toolbar forms',
+		'before_widget' => '<article class="toolbar-form %2$s" id="%1$s">',
+		'after_widget'  => '</article>',
+		'before_title'  => '<label>',
+		'after_title'   => '</label>'
+	)
+);

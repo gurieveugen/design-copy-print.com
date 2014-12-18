@@ -119,8 +119,7 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 
 					$phone = avia_get_option('phone');
 					$phone_class = !empty($nav) ? "with_nav" : "";
-					if($phone) echo "<div class='phone-info {$phone_class}'><span>{$phone}</span></div>";
-
+					if($phone) echo "<div class='phone-info {$phone_class}'>{$phone}</div>";
 
 					/*
 					* Hook that can be used for plugins and theme extensions like the wpml language selector
@@ -130,6 +129,12 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 					echo "</div>";
 
             	?>
+					<!-- <form action="#" class="form-signup cf">
+						<label>Sign up for our newsletter/offers</label>
+						<input type="text" value="" placeholder="Email address">
+						<input type="submit" value="SIGNUP">
+					</form> -->
+					<?php get_sidebar( 'forms' ); ?>
 		      </div>
 		</div>
 
@@ -186,4 +191,40 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 	<?php } //end blank check ?>	
 	<div id='main'>
 
-<div class="header-banner"><div class="container"><div class="header-banner-inside"><p class="head-p1">design-copy-print, Sussex based graphic design agency</p><p class="head-p2"><span style="color: rgb(66,66,66);">DESIGN SOLUTIONS...</span> RIGHT ON YOUR DOORSTEP.</p></div></div></div>
+<?php if( is_front_page()): ?>
+	<div class="header-banner"><div class="container"><div class="header-banner-inside"><p class="head-p1">design-copy-print, Sussex based graphic design agency</p><p class="head-p2"><span style="color: rgb(66,66,66);">DESIGN SOLUTIONS...</span> RIGHT ON YOUR DOORSTEP.</p></div></div></div>
+<?php else: ?>
+<div class="header-banner"><div class="container"><div class="header-banner-inside"></div></div></div>
+<?php endif ?>
+<?php if(is_user_logged_in() && is_front_page()): ?>
+<script src="<?php bloginfo('template_directory') ?>/js/mediaelement/jquery.flexslider-min.js"></script>
+<script>
+	jQuery(function(){
+		jQuery('.b-gallery').flexslider({
+			selector: ".slides > li",
+			animation: "slide",
+			slideshowSpeed: 7000,
+			animationSpeed: 600,
+			controlNav: false,
+			prevText: "<",
+			nextText: ">"
+		});
+	});
+</script>
+<div class="container">
+	<div class="b-section-gallery cf">
+		<div class="b-gallery">
+			<ul class="slides cf">
+				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
+				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
+				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
+			</ul>
+		</div>
+		<ul class="b-images-aside">
+			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
+			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
+			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
+		</ul>
+	</div>
+</div>
+<?php endif; ?>
