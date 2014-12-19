@@ -369,8 +369,6 @@ add_theme_support( 'avia_post_meta_compat');
  *  register custom functions that are not related to the framework but necessary for the theme to run
  */
 
-require_once( 'functions-enfold.php');
-
 register_sidebar(
 	array(
 		'id'            => 'toolbar-forms',
@@ -381,3 +379,8 @@ register_sidebar(
 		'after_title'   => '</label>'
 	)
 );
+
+require_once( 'functions-enfold.php');
+require_once( 'includes/SliderPostType.php');
+
+$slider_post_type = new SliderPostType();

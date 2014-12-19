@@ -211,7 +211,8 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 		});
 	});
 </script>
-<div class="container">
+<?php echo SliderPostType::getHTML(); ?>
+<!-- <div class="container">
 	<div class="b-section-gallery cf">
 		<div class="b-gallery">
 			<ul class="slides cf">
@@ -226,5 +227,5 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
 		</ul>
 	</div>
-</div>
+</div> -->
 <?php endif; ?>
