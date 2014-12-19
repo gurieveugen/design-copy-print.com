@@ -37,9 +37,58 @@ class SliderPostType{
             'supports'           => array('title', 'thumbnail'),
             'has_archive'        => true
         );
+        // ==============================================================
+        // Actions
+        // ==============================================================
 		add_action('init', array(&$this, 'registerPostType'));
         add_action('init', array(&$this, 'registerTaxonomy'));
+        add_action('admin_init', array(&$this, 'configureMetaBox'));
 	}	
+
+    /**
+     * Configure meta box    
+     */
+    public function configureMetaBox()
+    {   
+        add_action('save_post', array(&$this, 'savePost'));           
+        add_meta_box('additional_info', 'Additional info', array(&$this, 'getMetaBox'), 'front_page_slider', 'normal', 'default');
+    }
+
+    /**
+     * Render meta box
+     * PRINT CONTROLS HTML CODE
+     * @param  object $post
+     * @param  array $data
+     */
+    public function getMetaBox($post)
+    {
+        wp_nonce_field(plugin_basename(__FILE__), 'jw_nonce');
+
+        $meta   = get_post_custom($post->ID);      
+        $ai_url = isset($meta['ai_url']) ? $meta['ai_url'][0] : '';
+        ?>
+        <label for="">Slide URL</label>
+        <input type="text" name="ai_url" value="<?php echo $ai_url; ?>" class="widefat">
+        <?php
+    }  
+
+    /**
+     * When a post saved/updated in the database, this methods updates the meta box params in the db as well.
+     */
+    public function savePost($post_id)
+    {
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+        if ($_POST && !wp_verify_nonce($_POST['jw_nonce'], plugin_basename(__FILE__))) return;
+
+        if(isset($_POST['ai_url']))
+        {
+            update_post_meta($post_id, 'ai_url', $_POST['ai_url']);
+        }    
+        else
+        {
+            delete_post_meta($post_id, 'ai_url');
+        }
+    } 
 
     public function registerTaxonomy()
     {
@@ -122,15 +171,51 @@ class SliderPostType{
             {
                 if(has_post_thumbnail( $slide->ID ))
                 {
+                    $url = (string) get_post_meta($slide->ID, 'ai_url', true);
                     $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($slide->ID), 'slider' );
-                    $slides_list[] = sprintf('<li><a href="#"><img src="%s" alt="Slide"></a></li>', $thumb[0]);
+                    $slides_list[] = sprintf('<li><a href="%s"><img src="%s" alt="Slide"></a></li>', $url, $thumb[0]);
                 }
             }
         }
         // ==============================================================
         // Widgets
         // ==============================================================
-        
+        $args_widgets = array(
+            'posts_per_page'   => 3,
+            'offset'           => 0,
+            'orderby'          => 'post_date',
+            'order'            => 'DESC',
+            'include'          => '',
+            'exclude'          => '',
+            'meta_key'         => '',
+            'meta_value'       => '',
+            'post_type'        => 'front_page_slider',
+            'post_mime_type'   => '',
+            'post_parent'      => '',
+            'post_status'      => 'publish',
+            'suppress_filters' => true,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'slider_category',
+                    'field'    => 'slug',
+                    'terms'    => 'image-widgets'
+                )
+            )
+        );
+        $widgets = get_posts($args_widgets);
+        $widgets_list = array();
+        if(count($widgets))
+        {
+            foreach ($widgets as $widget) 
+            {
+                if(has_post_thumbnail( $widget->ID ))
+                {
+                    $url = (string) get_post_meta($widget->ID, 'ai_url', true);
+                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($widget->ID), 'slider-min' );
+                    $widgets_list[] = sprintf('<li><a href="%s"><img src="%s" alt="Slide"></a></li>', $url, $thumb[0]);
+                }
+            }
+        }
 
 
         ob_start();
@@ -143,9 +228,7 @@ class SliderPostType{
                     </ul>
                 </div>
                 <ul class="b-images-aside">
-                    <li><a href="#"><img src="http://placehold.it/300x160"></a></li>
-                    <li><a href="#"><img src="http://placehold.it/300x160"></a></li>
-                    <li><a href="#"><img src="http://placehold.it/300x160"></a></li>
+                    <?php echo implode('', $widgets_list); ?>
                 </ul>
             </div>
         </div>
