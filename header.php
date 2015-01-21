@@ -196,7 +196,7 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 <?php else: ?>
 <div class="header-banner"><div class="container"><div class="header-banner-inside"></div></div></div>
 <?php endif ?>
-<?php if(is_user_logged_in() && is_front_page()): ?>
+<?php if(is_front_page()): ?>
 <script src="<?php bloginfo('template_directory') ?>/js/mediaelement/jquery.flexslider-min.js"></script>
 <script>
 	jQuery(function(){
@@ -212,20 +212,4 @@ if( strpos($responsive, 'responsive') !== false ) echo '<meta name="viewport" co
 	});
 </script>
 <?php echo SliderPostType::getHTML(); ?>
-<!-- <div class="container">
-	<div class="b-section-gallery cf">
-		<div class="b-gallery">
-			<ul class="slides cf">
-				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
-				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
-				<li><a href="#"><img src="http://placehold.it/720x500"></a></li>
-			</ul>
-		</div>
-		<ul class="b-images-aside">
-			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
-			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
-			<li><a href="#"><img src="http://placehold.it/300x160"></a></li>
-		</ul>
-	</div>
-</div> -->
 <?php endif; ?>

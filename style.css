@@ -20,3 +20,11 @@ Theme URI: www.kriesi.at/themes/enfold/
 * it will override the original style. If you just want to add small css snippets you might also
 * want to consider to add it to the designated CSS option field in your themes backend at: Theme Options->Styling
 */
+
+#mc_message .mc_success_msg{
+	background: #404040;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -10px;
+}

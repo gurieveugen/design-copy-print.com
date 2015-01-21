@@ -382,5 +382,7 @@ register_sidebar(
 
 require_once( 'functions-enfold.php');
 require_once( 'includes/SliderPostType.php');
+require_once( 'includes/GCOptionsPage.php');
 
 $slider_post_type = new SliderPostType();
+$options_page = new GCOptionsPage();
