@@ -386,3 +386,10 @@ require_once( 'includes/GCOptionsPage.php');
 
 $slider_post_type = new SliderPostType();
 $options_page = new GCOptionsPage();
+
+add_action('avia_builder_mode', "builder_set_debug");
+function builder_set_debug()
+{
+	return "debug";
+}
+
